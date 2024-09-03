@@ -28,52 +28,100 @@ class BlogPreviewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: IntrinsicHeight(
-        child: Container(
+        child: IntrinsicHeight(
+            child: Container(
           constraints: const BoxConstraints(maxWidth: 382),
           margin: const EdgeInsets.all(16),
           color: Colors.white,
-          child: Column(children: [
-            SvgPicture.asset(
-              "assets/images/illustration-article.svg",
-              semanticsLabel: "Avatar picture",
-            ),
-            const CardBadge(),
-            const Text(
-              "Published 21 Dec 2023",
-              style: TextStyle(
-                fontSize: 8,
-                fontWeight: FontWeight.normal,
-                color: Colors.black,
-              ),
-              textDirection: TextDirection.ltr,
-            ),
-            const Text(
-              "HTML & CSS foundations",
-              style: TextStyle(
-                fontSize: 21,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-              textDirection: TextDirection.ltr,
-            ),
-            const Text(
-              "These languages are the backbone of every website, defining structure, content and presentation",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
-                color: Colors.grey,
-              ),
-              textDirection: TextDirection.ltr,
-            ),
-            const PictureAvatar(
+          child: const Column(children: [
+            Illustration(),
+            CardBadge(),
+            SubTitle(),
+            Title(),
+            Description(),
+            PictureAvatar(
                 borderRadius: 20.0,
                 asset: "assets/images/image-avatar.webp",
                 spacing: 16.0,
                 fontSize: 8.0),
           ]),
-        ),
-      )),
+        )),
+      ),
+    );
+  }
+}
+
+class Illustration extends StatelessWidget {
+  const Illustration({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20))),
+      child: SvgPicture.asset(
+        "assets/images/illustration-article.svg",
+        semanticsLabel: "Avatar picture",
+      ),
+    );
+  }
+}
+
+class Description extends StatelessWidget {
+  const Description({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      "These languages are the backbone of every website, defining structure, content and presentation",
+      style: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.normal,
+        color: Colors.grey,
+      ),
+      textDirection: TextDirection.ltr,
+    );
+  }
+}
+
+class Title extends StatelessWidget {
+  const Title({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      "HTML & CSS foundations",
+      style: TextStyle(
+        fontSize: 21,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),
+      textDirection: TextDirection.ltr,
+    );
+  }
+}
+
+class SubTitle extends StatelessWidget {
+  const SubTitle({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      "Published 21 Dec 2023",
+      style: TextStyle(
+        fontSize: 8,
+        fontWeight: FontWeight.normal,
+        color: Colors.black,
+      ),
+      textDirection: TextDirection.ltr,
     );
   }
 }
