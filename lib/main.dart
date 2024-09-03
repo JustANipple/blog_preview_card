@@ -29,30 +29,42 @@ class BlogPreviewCard extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: IntrinsicHeight(
-            child: Container(
-          constraints: const BoxConstraints(maxWidth: 382),
-          margin: const EdgeInsets.all(16),
-          color: Colors.white,
-          child: const Column(children: [
-            Illustration(),
-            CardBadge(),
-            SubTitle(),
-            Title(),
-            Description(),
-            PictureAvatar(
-                borderRadius: 20.0,
-                asset: "assets/images/image-avatar.webp",
-                spacing: 16.0,
-                fontSize: 8.0),
-          ]),
-        )),
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 382),
+            margin: const EdgeInsets.all(16),
+            color: Colors.white,
+            child: const Column(children: [
+              Illustration(
+                asset: "assets/images/illustration-article.svg",
+                semanticsLabel: "Avatar picture",
+              ),
+              CardBadge(
+                  color: scaffoldBackgroundColor,
+                  padding: 16,
+                  text: "Learning"),
+              SubTitle(),
+              Title(),
+              Description(),
+              PictureAvatar(
+                  borderRadius: 20.0,
+                  asset: "assets/images/image-avatar.webp",
+                  spacing: 16.0,
+                  fontSize: 8.0),
+            ]),
+          ),
+        ),
       ),
     );
   }
 }
 
 class Illustration extends StatelessWidget {
+  final String asset;
+  final String semanticsLabel;
+
   const Illustration({
+    required this.asset,
+    required this.semanticsLabel,
     super.key,
   });
 
@@ -62,8 +74,8 @@ class Illustration extends StatelessWidget {
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20))),
       child: SvgPicture.asset(
-        "assets/images/illustration-article.svg",
-        semanticsLabel: "Avatar picture",
+        asset,
+        semanticsLabel: semanticsLabel,
       ),
     );
   }
@@ -127,15 +139,23 @@ class SubTitle extends StatelessWidget {
 }
 
 class CardBadge extends StatelessWidget {
-  const CardBadge({super.key});
+  final Color color;
+  final double padding;
+  final String text;
+
+  const CardBadge(
+      {required this.color,
+      required this.padding,
+      required this.text,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.yellow,
-      padding: const EdgeInsets.all(16),
-      child: const Text(
-        "Badge",
+      color: color,
+      padding: EdgeInsets.all(padding),
+      child: Text(
+        text,
         textDirection: TextDirection.ltr,
       ),
     );
