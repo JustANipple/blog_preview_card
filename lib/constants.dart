@@ -13,18 +13,11 @@ const fsRegular = 16.0;
 const fsMedium = 24.0;
 
 const fwMedium = FontWeight.w500;
-const fwExtraBold = FontWeight.w800;
+const fwExtraBold = FontWeight.w900;
 
-const lhSmall = 21;
-const lhRegular = 24;
-const lhMedium = 36;
+const lh = 1.5;
 
 const sp1 = 4;
 const sp2 = 8;
 const sp3 = 12;
 const sp4 = 16;
-
-const avatarSpacing = 16.0;
-const avatarRadius = 20.0;
-const avatarAsset = "assets/images/image-avatar.webp";
-const avatarName = "Greg Hopper";
