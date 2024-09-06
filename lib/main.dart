@@ -42,7 +42,7 @@ class BlogPreviewCard extends StatelessWidget {
                 color: cardColor,
                 border: Border.all(width: 1.0, color: shadowColor),
                 borderRadius: const BorderRadius.all(Radius.circular(20))),
-            constraints: const BoxConstraints(maxWidth: 375),
+            constraints: const BoxConstraints(maxWidth: 327),
             padding: const EdgeInsets.all(24),
             margin: const EdgeInsets.all(24),
             child: const IntrinsicHeight(
@@ -56,8 +56,9 @@ class BlogPreviewCard extends StatelessWidget {
                     ),
                     CardBadge(
                         color: scaffoldBackgroundColor,
-                        hPadding: 13,
-                        vPadding: 6,
+                        hPadding: 11,
+                        vPadding: 4,
+                        vMargin: 15,
                         borderRadius: 4,
                         text: Text(
                           "Learning",
@@ -65,7 +66,7 @@ class BlogPreviewCard extends StatelessWidget {
                               fontFamily: ff,
                               fontWeight: fwExtraBold,
                               height: lh,
-                              fontSize: 14),
+                              fontSize: 12),
                           textDirection: TextDirection.ltr,
                         )),
                     SubTitle(
@@ -242,6 +243,7 @@ class CardBadge extends StatelessWidget {
   final Color color;
   final double hPadding;
   final double vPadding;
+  final double vMargin;
   final double borderRadius;
   final Text text;
 
@@ -249,6 +251,7 @@ class CardBadge extends StatelessWidget {
       {required this.color,
       required this.hPadding,
       required this.vPadding,
+      required this.vMargin,
       required this.borderRadius,
       required this.text,
       super.key});
@@ -256,7 +259,7 @@ class CardBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
+      margin: EdgeInsets.symmetric(vertical: vMargin),
       padding: EdgeInsets.symmetric(horizontal: hPadding, vertical: vPadding),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius), color: color),
