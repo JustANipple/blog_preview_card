@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pixel_perfect/pixel_perfect.dart';
 import 'constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           scaffoldBackgroundColor: scaffoldBackgroundColor,
-          shadowColor: shadowColor),
+          shadowColor: shadowColor,
+          fontFamily: ff),
       debugShowCheckedModeBanner: false,
       home: const BlogPreviewCard(),
     );
@@ -54,11 +56,11 @@ class BlogPreviewCard extends StatelessWidget {
                       asset: "assets/images/illustration-article.svg",
                       semanticsLabel: "Avatar picture",
                     ),
+                    SizedBox(height: 24),
                     CardBadge(
                         color: scaffoldBackgroundColor,
                         hPadding: 11,
                         vPadding: 4,
-                        vMargin: 15,
                         borderRadius: 4,
                         text: Text(
                           "Learning",
@@ -66,39 +68,43 @@ class BlogPreviewCard extends StatelessWidget {
                               fontFamily: ff,
                               fontWeight: fwExtraBold,
                               height: lh,
-                              fontSize: 12),
+                              fontSize: 11),
                           textDirection: TextDirection.ltr,
                         )),
+                    SizedBox(height: 10),
                     SubTitle(
                         text: "Published 21 Dec 2023",
-                        fontSize: 14,
+                        fontSize: 12,
                         fontFamily: ff,
                         fontWeight: fwMedium,
                         height: lh,
                         color: headerColor),
+                    SizedBox(height: 12),
                     Title(
                         text: "HTML & CSS foundations",
                         fontFamily: ff,
-                        fontSize: 24,
+                        fontSize: 19,
                         fontWeight: fwExtraBold,
                         height: lh,
                         color: headerColor),
+                    SizedBox(height: 16),
                     Description(
                         text:
                             "These languages are the backbone of every website, defining structure, content and presentation",
                         fontFamily: ff,
-                        fontSize: 17,
+                        fontSize: 13,
                         fontWeight: fwMedium,
                         height: lh,
                         color: Color.fromRGBO(107, 107, 107, 1)),
+                    SizedBox(height: 24),
                     PictureAvatar(
                       asset: "assets/images/image-avatar.webp",
                       borderRadius: 20.0,
                       width: 32,
-                      gap: 12,
+                      gap: 11,
                       text: "Greg Hooper",
                       fontFamily: ff,
-                      fontSize: 18,
+                      fontSize: 13,
                       fontWeight: fwExtraBold,
                       color: headerColor,
                     ),
@@ -123,16 +129,13 @@ class Illustration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: SvgPicture.asset(
-          asset,
-          semanticsLabel: semanticsLabel,
-          fit: BoxFit.cover,
-          height: 200,
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: SvgPicture.asset(
+        asset,
+        semanticsLabel: semanticsLabel,
+        fit: BoxFit.cover,
+        height: 200,
       ),
     );
   }
@@ -243,7 +246,6 @@ class CardBadge extends StatelessWidget {
   final Color color;
   final double hPadding;
   final double vPadding;
-  final double vMargin;
   final double borderRadius;
   final Text text;
 
@@ -251,7 +253,6 @@ class CardBadge extends StatelessWidget {
       {required this.color,
       required this.hPadding,
       required this.vPadding,
-      required this.vMargin,
       required this.borderRadius,
       required this.text,
       super.key});
@@ -259,7 +260,6 @@ class CardBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: vMargin),
       padding: EdgeInsets.symmetric(horizontal: hPadding, vertical: vPadding),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius), color: color),
