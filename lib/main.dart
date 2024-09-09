@@ -2,7 +2,6 @@ import 'package:blog_preview_card/components/card_badge.dart';
 import 'package:blog_preview_card/components/illustration.dart';
 import 'package:blog_preview_card/components/picture_avatar.dart';
 import 'package:flutter/material.dart';
-import 'package:pixel_perfect/pixel_perfect.dart';
 import 'constants.dart';
 
 void main() {
