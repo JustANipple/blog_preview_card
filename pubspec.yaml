@@ -76,6 +76,7 @@ flutter:
     - assets/images/illustration-article.svg
     - assets/images/image-avatar.webp
     - design/mobile-design.jpg
+    - design/desktop-design.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
