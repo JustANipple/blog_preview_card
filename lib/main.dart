@@ -44,7 +44,7 @@ class BlogPreviewCard extends StatelessWidget {
                 border: Border.all(width: 1.0, color: shadowColor),
                 borderRadius: const BorderRadius.all(Radius.circular(20))),
             constraints: const BoxConstraints(maxWidth: 327),
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.all(23),
             margin: const EdgeInsets.all(24),
             child: const IntrinsicHeight(
               child: Column(
@@ -58,7 +58,7 @@ class BlogPreviewCard extends StatelessWidget {
                     SizedBox(height: 24),
                     CardBadge(
                         color: scaffoldBackgroundColor,
-                        hPadding: 11,
+                        hPadding: 12,
                         vPadding: 4,
                         borderRadius: 4,
                         text: Text(
@@ -66,12 +66,14 @@ class BlogPreviewCard extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: fwExtraBold,
                               height: lh,
-                              fontSize: 12),
+                              fontSize: 12,
+                              letterSpacing: 0),
                           textDirection: TextDirection.ltr,
                         )),
                     SizedBox(height: 12),
                     SubTitle(
                         text: "Published 21 Dec 2023",
+                        fontFamily: "Figtree",
                         fontSize: 12,
                         fontWeight: fwMedium,
                         height: lh,
@@ -83,7 +85,7 @@ class BlogPreviewCard extends StatelessWidget {
                         fontWeight: fwExtraBold,
                         height: lh,
                         color: headerColor),
-                    SizedBox(height: 16),
+                    SizedBox(height: 12),
                     Description(
                         text:
                             "These languages are the backbone of every website, defining structure, content and presentation",
@@ -98,7 +100,7 @@ class BlogPreviewCard extends StatelessWidget {
                       width: 32,
                       gap: 11,
                       text: "Greg Hooper",
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: fwExtraBold,
                       color: headerColor,
                     ),
@@ -198,6 +200,7 @@ class Title extends StatelessWidget {
 
 class SubTitle extends StatelessWidget {
   final String text;
+  final String fontFamily;
   final double fontSize;
   final FontWeight fontWeight;
   final double height;
@@ -205,6 +208,7 @@ class SubTitle extends StatelessWidget {
 
   const SubTitle({
     required this.text,
+    required this.fontFamily,
     required this.fontSize,
     required this.fontWeight,
     required this.height,
@@ -217,6 +221,7 @@ class SubTitle extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
+        fontFamily: fontFamily,
         fontSize: fontSize,
         fontWeight: fontWeight,
         height: height,
