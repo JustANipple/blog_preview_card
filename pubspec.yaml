@@ -63,9 +63,16 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  fonts:
+    - family: Figtree
+      fonts:
+        - asset: assets/fonts/static/Figtree-ExtraBold.ttf
+        - asset: assets/fonts/static/Figtree-SemiBold.ttf
+        - asset: assets/fonts/Figtree-VariableFont_wght.ttf
+        - asset: assets/fonts/Figtree-Italic-VariableFont_wght.ttf
+          style: italic
 
   assets:
-    - assets/fonts/Figtree-VariableFont_wght.ttf
     - assets/images/illustration-article.svg
     - assets/images/image-avatar.webp
     - design/mobile-design.jpg

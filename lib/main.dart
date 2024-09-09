@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pixel_perfect/pixel_perfect.dart';
 import 'constants.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           scaffoldBackgroundColor: scaffoldBackgroundColor,
           shadowColor: shadowColor,
-          fontFamily: ff),
+          fontFamily: "Figtree"),
       debugShowCheckedModeBanner: false,
       home: const BlogPreviewCard(),
     );
@@ -65,25 +64,22 @@ class BlogPreviewCard extends StatelessWidget {
                         text: Text(
                           "Learning",
                           style: TextStyle(
-                              fontFamily: ff,
                               fontWeight: fwExtraBold,
                               height: lh,
-                              fontSize: 11),
+                              fontSize: 12),
                           textDirection: TextDirection.ltr,
                         )),
-                    SizedBox(height: 10),
+                    SizedBox(height: 12),
                     SubTitle(
                         text: "Published 21 Dec 2023",
                         fontSize: 12,
-                        fontFamily: ff,
                         fontWeight: fwMedium,
                         height: lh,
                         color: headerColor),
                     SizedBox(height: 12),
                     Title(
                         text: "HTML & CSS foundations",
-                        fontFamily: ff,
-                        fontSize: 19,
+                        fontSize: 20,
                         fontWeight: fwExtraBold,
                         height: lh,
                         color: headerColor),
@@ -91,8 +87,7 @@ class BlogPreviewCard extends StatelessWidget {
                     Description(
                         text:
                             "These languages are the backbone of every website, defining structure, content and presentation",
-                        fontFamily: ff,
-                        fontSize: 13,
+                        fontSize: 14,
                         fontWeight: fwMedium,
                         height: lh,
                         color: Color.fromRGBO(107, 107, 107, 1)),
@@ -103,7 +98,6 @@ class BlogPreviewCard extends StatelessWidget {
                       width: 32,
                       gap: 11,
                       text: "Greg Hooper",
-                      fontFamily: ff,
                       fontSize: 13,
                       fontWeight: fwExtraBold,
                       color: headerColor,
@@ -143,7 +137,6 @@ class Illustration extends StatelessWidget {
 
 class Description extends StatelessWidget {
   final String text;
-  final String fontFamily;
   final double fontSize;
   final FontWeight fontWeight;
   final double height;
@@ -151,7 +144,6 @@ class Description extends StatelessWidget {
 
   const Description({
     required this.text,
-    required this.fontFamily,
     required this.fontSize,
     required this.fontWeight,
     required this.height,
@@ -165,7 +157,6 @@ class Description extends StatelessWidget {
       softWrap: true,
       text,
       style: TextStyle(
-          fontFamily: fontFamily,
           fontSize: fontSize,
           fontWeight: fontWeight,
           color: color,
@@ -177,7 +168,6 @@ class Description extends StatelessWidget {
 
 class Title extends StatelessWidget {
   final String text;
-  final String fontFamily;
   final double fontSize;
   final FontWeight fontWeight;
   final double height;
@@ -185,7 +175,6 @@ class Title extends StatelessWidget {
 
   const Title({
     required this.text,
-    required this.fontFamily,
     required this.fontSize,
     required this.fontWeight,
     required this.height,
@@ -198,7 +187,6 @@ class Title extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-          fontFamily: fontFamily,
           fontSize: fontSize,
           fontWeight: fontWeight,
           color: color,
@@ -211,7 +199,6 @@ class Title extends StatelessWidget {
 class SubTitle extends StatelessWidget {
   final String text;
   final double fontSize;
-  final String fontFamily;
   final FontWeight fontWeight;
   final double height;
   final Color color;
@@ -219,7 +206,6 @@ class SubTitle extends StatelessWidget {
   const SubTitle({
     required this.text,
     required this.fontSize,
-    required this.fontFamily,
     required this.fontWeight,
     required this.height,
     required this.color,
@@ -232,7 +218,6 @@ class SubTitle extends StatelessWidget {
       text,
       style: TextStyle(
         fontSize: fontSize,
-        fontFamily: fontFamily,
         fontWeight: fontWeight,
         height: height,
         color: color,
@@ -274,7 +259,6 @@ class PictureAvatar extends StatelessWidget {
   final double width;
   final double gap;
   final String text;
-  final String fontFamily;
   final double fontSize;
   final FontWeight fontWeight;
   final Color color;
@@ -285,7 +269,6 @@ class PictureAvatar extends StatelessWidget {
       required this.width,
       required this.gap,
       required this.text,
-      required this.fontFamily,
       required this.fontSize,
       required this.fontWeight,
       required this.color,
@@ -306,10 +289,7 @@ class PictureAvatar extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
-              fontFamily: ff,
-              fontSize: fontSize,
-              fontWeight: fwExtraBold,
-              color: color),
+              fontSize: fontSize, fontWeight: fwExtraBold, color: color),
           textDirection: TextDirection.ltr,
         ),
       ],
