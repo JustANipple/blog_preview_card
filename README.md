@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://github.com/JustANipple/blog_preview_card)
-- Live Site URL: [Live site](https://justanipple.github.io/blog_preview_card/)
+- Live Site URL: [Live site](https://blog-preview-card-ecf6c.web.app/)
 
 ## My process
 
